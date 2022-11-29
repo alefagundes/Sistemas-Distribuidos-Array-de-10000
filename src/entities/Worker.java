@@ -13,10 +13,10 @@ public class Worker implements Runnable{
     Socket socket = null;
     ObjectOutputStream out;
     
-    /*void start() {
+    void start() {
     	Thread t = new Thread(this);
     	t.start();
-    }*/
+    }
 
     void connect() {
         try {
@@ -71,20 +71,18 @@ public class Worker implements Runnable{
 
     public static void main(String[] args) {
         Worker w = new Worker();
-        Thread t = new Thread(this);
-    	t.start();
+        w.start();
         System.out.println("Chamei um worker!");
         
     }
 
 	@Override
 	public void run() {
-		System.out.println("oi run");
-		/*connect();
+		connect();
 		notify();
 		while (true) {
          getReq();
-        }*/
+        }
 		
 	}
 
